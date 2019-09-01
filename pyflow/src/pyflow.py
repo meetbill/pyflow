@@ -214,7 +214,8 @@ def timeStampToTimeStr(ts) :
     """
     converts time.time() output to timenow() string
     """
-    return datetime.datetime.utcfromtimestamp(ts).isoformat()
+    return time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(ts))
+    #return datetime.datetime.utcfromtimestamp(ts).isoformat()
 
 def timeStrNow():
     return timeStampToTimeStr(time.time())
